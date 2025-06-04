@@ -12,6 +12,7 @@ class ConversorC {
         this.qtd_valoratual = qtd_valoratual;
     }
 
+
     //metodo que irá verificar qual tipo de conversão será feita, os 3 primeiros são filtros para possíveis erros
     public void verificador() {
         if (comprimentoatual.equalsIgnoreCase(comprimentoconversao)) {

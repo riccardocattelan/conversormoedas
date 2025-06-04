@@ -15,9 +15,6 @@ public class Main {
             comprimentos.executar(scanner);
         }
 
-
-
-
         scanner.close();
 
     }

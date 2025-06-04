@@ -20,5 +20,6 @@ class conversorMoedas {
         Conversor conversor = new Conversor(moedaatual, moedaconversao, qtd_moedaatual);
         conversor.verificador();
 
+
     }
 }

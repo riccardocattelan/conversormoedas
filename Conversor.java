@@ -12,6 +12,7 @@ class Conversor {
         this.qtd_moedaatual = qtd_moedaatual;
     }
 
+
     //metodo que irá verificar qual tipo de conversão será feita, os 3 primeiros são filtros para possíveis erros
     public void verificador() {
         if (moedaatual.equalsIgnoreCase(moedaconversao)) {
