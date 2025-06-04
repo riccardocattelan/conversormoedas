@@ -1,12 +1,12 @@
 //classe Conversor, aqui terá os atributos e métodos usados
-class Conversor {
+class ConversorM {
     //atributos usados para executar as conversões
     public String moedaatual;
     public String moedaconversao;
     public float qtd_moedaatual;
 
     //será pego as variáveis para serem usadas dentro da classe Conversor
-    public Conversor(String moedaatual, String moedaconversao, float qtd_moedaatual) {
+    public ConversorM(String moedaatual, String moedaconversao, float qtd_moedaatual) {
         this.moedaatual = moedaatual;
         this.moedaconversao = moedaconversao;
         this.qtd_moedaatual = qtd_moedaatual;

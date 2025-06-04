@@ -17,7 +17,7 @@ class conversorMoedas {
         System.out.println("A conversão pode ter uma pequena variação devido a precisão das conversões e a flutuação das cotações das moedas");
 
         //cria um objeto conversor da classe Conversor
-        Conversor conversor = new Conversor(moedaatual, moedaconversao, qtd_moedaatual);
+        ConversorM conversor = new ConversorM(moedaatual, moedaconversao, qtd_moedaatual);
         conversor.verificador();
 
 
