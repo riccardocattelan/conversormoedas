@@ -1,30 +1,3 @@
-import java.util.Scanner;
-
-public class Conversor_moedas {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        //será pego a moeda inicial, a quantidadde e a moeda que deseja obter na conversão
-        System.out.println("Digite a moeda que você possui; entre real, dólar, euro e libra: ");
-        String moedaatual = scanner.nextLine();
-        System.out.println("Quantos " + moedaatual + " você possui: ");
-        float qtd_moedaatual = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Digite a moeda que você deseja; entre real, dólar, euro e libra: ");
-        String moedaconversao = scanner.nextLine();
-
-        //Avisos para melhor utilização por parte do usuário
-        System.out.println("A conversão pode ter uma pequena variação devido a precisão das conversões e a flutuação das cotações das moedas");
-        System.out.println("Digite sem acentos");
-
-        //cria um objeto conversor da classe Conversor
-        Conversor conversor = new Conversor(moedaatual, moedaconversao, qtd_moedaatual);
-        conversor.verificador();
-
-        scanner.close();
-    }
-}
-
 //classe Conversor, aqui terá os atributos e métodos usados
 class Conversor {
     //atributos usados para executar as conversões
@@ -43,13 +16,15 @@ class Conversor {
     public void verificador() {
         if (moedaatual.equalsIgnoreCase(moedaconversao)) {
             System.out.println("Você tentou converter uma moeda para a mesma moeda. Você tem " + qtd_moedaatual + " " + moedaatual);
-        } else if (!moedaatual.equalsIgnoreCase("real") && !moedaatual.equalsIgnoreCase("dolar") && !moedaatual.equalsIgnoreCase("euro") && !moedaatual.equalsIgnoreCase("libra")) {
+        } else if (!moedaatual.equalsIgnoreCase("real") && !moedaatual.equalsIgnoreCase("dólar") && !moedaatual.equalsIgnoreCase("euro") && !moedaatual.equalsIgnoreCase("libra")) {
             System.out.println("A moeda inicial que você possui não faz parte da lista de moedas disponíveis, as disponíveis são real, dólar, euro e libra.");
-        } else if (!moedaconversao.equalsIgnoreCase("real") && !moedaconversao.equalsIgnoreCase("dolar") && !moedaconversao.equalsIgnoreCase("euro") && !moedaconversao.equalsIgnoreCase("libra")) {
+            System.out.println("Verifique se digitou corretamente.");
+        } else if (!moedaconversao.equalsIgnoreCase("real") && !moedaconversao.equalsIgnoreCase("dólar") && !moedaconversao.equalsIgnoreCase("euro") && !moedaconversao.equalsIgnoreCase("libra")) {
             System.out.println("A moeda final que você deseja saber a conversão não faz parte da lista de moedas disponíveis, as disponíveis são real, dólar, euro e libra.");
+            System.out.println("Verifique se digitou corretamente.");
         } else if (moedaatual.equalsIgnoreCase("real")) {
             conversorreal();
-        } else if (moedaatual.equalsIgnoreCase("dolar")) {
+        } else if (moedaatual.equalsIgnoreCase("dólar")) {
             conversordolar();
         } else if (moedaatual.equalsIgnoreCase("euro")) {
             conversoreuro();
@@ -60,7 +35,7 @@ class Conversor {
 
     //metodo será executado se a moeda inicial for real brasileiro
     private void conversorreal() {
-        if (moedaconversao.equalsIgnoreCase("dolar")) {
+        if (moedaconversao.equalsIgnoreCase("dólar")) {
             System.out.println("Você possui: " + qtd_moedaatual * 0.18 + " dólares");
         } else if (moedaconversao.equalsIgnoreCase("euro")) {
             System.out.println("Você possui: " + qtd_moedaatual * 0.16 + " euros");
@@ -84,7 +59,7 @@ class Conversor {
     private void conversoreuro() {
         if (moedaconversao.equalsIgnoreCase("real")) {
             System.out.println("Você possui: " + qtd_moedaatual * 6.44 + " reais");
-        } else if (moedaconversao.equalsIgnoreCase("dolar")) {
+        } else if (moedaconversao.equalsIgnoreCase("dólar")) {
             System.out.println("Você possui: " + qtd_moedaatual * 1.14 + " dólares");
         } else if (moedaconversao.equalsIgnoreCase("libra")) {
             System.out.println("Você possui: " + qtd_moedaatual * 0.84 + " libras");
@@ -95,7 +70,7 @@ class Conversor {
     private void conversorlibra() {
         if (moedaconversao.equalsIgnoreCase("real")) {
             System.out.println("Você possui: " + qtd_moedaatual * 7.63 + " reais");
-        } else if (moedaconversao.equalsIgnoreCase("dolar")) {
+        } else if (moedaconversao.equalsIgnoreCase("dólar")) {
             System.out.println("Você possui: " + qtd_moedaatual * 1.35 + " dólares");
         } else if (moedaconversao.equalsIgnoreCase("euro")) {
             System.out.println("Você possui: " + qtd_moedaatual * 1.19 + " euros");
